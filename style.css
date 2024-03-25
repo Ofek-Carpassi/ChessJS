@@ -1,46 +1,57 @@
-#gameboard {
-    width: 320px;
-    height: 320px;
-    display: flex;
-    flex-wrap: wrap;
+body {
+    background-color: #ffffff;
 }
 
-.square {
-    height: 40px;
-    width: 40px;
-    position: relative;
+p {
+    text-align: center;
 }
 
-.square svg {
-    height: 30px;
-    width: 30px;
-    margin: 5px;
-    position: relative;
-    z-index: -9;
+#Reset-Button-Container {
+    height: 120px; /* גובה הכפתור */
+    position: relative; /* יישום על המסך */
+    /* border: 3px solid black; */
 }
 
-path {
-    position: relative;
-    z-index: -10;
+#Center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
-.piece {
-    position: relative;
-    z-index: 9;
+#Reset-Game {
+    font-size: 28px; /* גודל הטקסט בכפתור */
+    padding: 15px 40px; /* מרווחים בתוך הכפתור */
+    border-radius: 30px; /* עיגול פינות הכפתור */
+    border: none; /* הסרת גבולות מסביב לכפתור */
+    cursor: pointer; /* שינוי העכבר לסמן היד */
+    background-color: rgb(0, 0, 255); /* רקע בצבע צהוב */
+    color: white; /* צבע הטקסט */
+    align-self: center; /* מיקום הכפתור באמצע המסך */
 }
 
-.beige {
-    background-color: rgb(131, 131, 118);
+#Reset-Game:hover {
+    border-radius: 40px; /* עיגול פינות הכפתור בעת העכבר מעליו */
+    background-color: rgb(0, 119, 255); /* שינוי רקע הכפתור בעת העכבר מעליו */
 }
 
-.brown {
-    background-color: rgb(169, 43, 43);
+table {
+    /* align to center the table to the middle of the screen */
+    align-self: center;
+    margin-top: 100px;
+    border-collapse: collapse;
 }
 
-.black {
-    fill: rgb(28, 28, 28);
+td {
+    width: 90px;
+    height: 90px;
+    border: 3px solid black;
+    text-align: center;
 }
 
-.white {
-    fill: rgb(255, 255, 255);
+img {
+    width: 80px;
+    height: 80px;
 }
