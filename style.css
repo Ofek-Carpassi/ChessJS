@@ -45,13 +45,13 @@ table {
 }
 
 td {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     border: 3px solid black;
     text-align: center;
 }
 
 img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
