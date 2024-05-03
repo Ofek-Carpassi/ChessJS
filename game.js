@@ -62,10 +62,10 @@ function createBoard(){
         for(let j = 0; j < 8; j++){
             // Create a square
             if((i+j) % 2 === 0){
-                strToShow += "<td style='background-color:black'  width='60' height='60' id=" +
+                strToShow += "<td class = 'whiteSquare' width='60' height='60' id=" +
                     numToShow.toString() + "  ondrop='drop(event)' ondragover='allowDrop(event)'>";
             } else {
-                strToShow += "<td style='background-color:white'  width='60' height='60' id=" +
+                strToShow += "<td class = 'blackSquare'  width='60' height='60' id=" +
                     numToShow.toString() + "  ondrop='drop(event)' ondragover='allowDrop(event)'>";
             }
             // Add the piece to the square

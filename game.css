@@ -127,3 +127,13 @@ img {
 #return-home:hover:before {
     transform: scale(1);
 }
+
+.whiteSquare {
+    background: linear-gradient(120deg, #d76d77 0%, #ffaf7b 100%);
+    border: 1px solid #3a1c71;
+}
+
+.blackSquare {
+    background: linear-gradient(120deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
+    border: 1px solid #d76d77;
+}
