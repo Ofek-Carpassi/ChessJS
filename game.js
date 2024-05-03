@@ -41,7 +41,7 @@ function resetGame(){
         ["", "", "", "", "", "", "", ""],
         ["whitePawn", "whitePawn", "whitePawn", "whitePawn", "whitePawn", "whitePawn", "whitePawn", "whitePawn"],
         ["whiteRook", "whiteKnight", "whiteBishop", "whiteQueen", "whiteKing", "whiteBishop", "whiteKnight", "whiteRook"]
-    ]
+    ] 
 
     // create the board
     createBoard();
@@ -70,29 +70,29 @@ function createBoard(){
             }
             // Add the piece to the square
             if(board[i][j] == "blackPawn")
-                strToShow += "<img src = images/blackPawn.png draggable='true' ondragstart='drag(event)' id='pawn' class='piece black' />";
+                strToShow += "<img src = images/blackPawn.png draggable='true' ondragstart='drag(event)' id='pawn' class='piece-black' />";
             else if(board[i][j] == "whitePawn")
-                strToShow += "<img src = images/whitePawn.png draggable='true' ondragstart='drag(event)' id='pawn' class='piece white' />";
+                strToShow += "<img src = images/whitePawn.png draggable='true' ondragstart='drag(event)' id='pawn' class='piece-white' />";
             else if(board[i][j] == "blackRook")
-                strToShow += "<img src = images/blackRook.png draggable='true' ondragstart='drag(event)' id='rook' class='piece black' />";
+                strToShow += "<img src = images/blackRook.png draggable='true' ondragstart='drag(event)' id='rook' class='piece-black' />";
             else if(board[i][j] == "whiteRook")
-                strToShow += "<img src = images/whiteRook.png draggable='true' ondragstart='drag(event)' id='rook' class='piece white' />";
+                strToShow += "<img src = images/whiteRook.png draggable='true' ondragstart='drag(event)' id='rook' class='piece-white' />";
             else if(board[i][j] == "blackKnight")
-                strToShow += "<img src = images/blackKnight.png draggable='true' ondragstart='drag(event)' id='knight' class='piece black' />";
+                strToShow += "<img src = images/blackKnight.png draggable='true' ondragstart='drag(event)' id='knight' class='piece-black' />";
             else if(board[i][j] == "whiteKnight")
-                strToShow += "<img src = images/whiteKnight.png draggable='true' ondragstart='drag(event)' id='knight' class='piece white' />";
+                strToShow += "<img src = images/whiteKnight.png draggable='true' ondragstart='drag(event)' id='knight' class='piece-white' />";
             else if(board[i][j] == "blackBishop")
-                strToShow += "<img src = images/blackBishop.png draggable='true' ondragstart='drag(event)' id='bishop' class='piece black' />";
+                strToShow += "<img src = images/blackBishop.png draggable='true' ondragstart='drag(event)' id='bishop' class='piece-black' />";
             else if(board[i][j] == "whiteBishop")
-                strToShow += "<img src = images/whiteBishop.png draggable='true' ondragstart='drag(event)' id='bishop' class='piece white' />";
+                strToShow += "<img src = images/whiteBishop.png draggable='true' ondragstart='drag(event)' id='bishop' class='piece-white' />";
             else if(board[i][j] == "blackQueen")
-                strToShow += "<img src = images/blackQueen.png draggable='true' ondragstart='drag(event)' id='queen' class='piece black' />";
+                strToShow += "<img src = images/blackQueen.png draggable='true' ondragstart='drag(event)' id='queen' class='piece-black' />";
             else if(board[i][j] == "whiteQueen")
-                strToShow += "<img src = images/whiteQueen.png draggable='true' ondragstart='drag(event)' id='queen' class='piece white' />";
+                strToShow += "<img src = images/whiteQueen.png draggable='true' ondragstart='drag(event)' id='queen' class='piece-white' />";
             else if(board[i][j] == "blackKing")
-                strToShow += "<img src = images/blackKing.png draggable='true' ondragstart='drag(event)' id='king' class='piece black' />";
+                strToShow += "<img src = images/blackKing.png draggable='true' ondragstart='drag(event)' id='king' class='piece-black' />";
             else if(board[i][j] == "whiteKing")
-                strToShow += "<img src = images/whiteKing.png draggable='true' ondragstart='drag(event)' id='king' class='piece white' />";
+                strToShow += "<img src = images/whiteKing.png draggable='true' ondragstart='drag(event)' id='king' class='piece-white' />";
             
             // Close the square
             strToShow += "</td>";
@@ -168,7 +168,9 @@ function drop(e) {
     else if(piece == "knight")
         checkKnight(startRow, startColumn, targetRow, targetColumn);
     else if(piece == "bishop")
+    {
         checkBishop(startRow, startColumn, targetRow, targetColumn);
+    }
     else if(piece == "queen")
         checkQueen(startRow, startColumn, targetRow, targetColumn);
     else if(piece == "king")
@@ -220,6 +222,7 @@ function checkPawn(startRow, startColumn, targetRow, targetColumn){
                     alert("Invalid move. You are in check.");
                     return;
                 }
+
                 createBoard();
                 playerGo = "black";
             }
@@ -271,6 +274,7 @@ function checkPawn(startRow, startColumn, targetRow, targetColumn){
 
 function checkKnight(startRow, startColumn, targetRow, targetColumn){
     // Check if the piece is a knight
+    piece = board[startRow][startColumn];
     if(board[startRow][startColumn].includes(playerGo)){
         let piece = board[startRow][startColumn];
         let targetPiece = board[targetRow][targetColumn];
@@ -279,7 +283,7 @@ function checkKnight(startRow, startColumn, targetRow, targetColumn){
             (startRow - 1 == targetRow && startColumn - 2 == targetColumn) || (startRow - 1 == targetRow && startColumn + 2 == targetColumn) ||
             (startRow + 1 == targetRow && startColumn - 2 == targetColumn) || (startRow + 1 == targetRow && startColumn + 2 == targetColumn)){
             board[startRow][startColumn] = "";
-            board[targetRow][targetColumn] = playerGo + "Knight";
+            board[targetRow][targetColumn] = playerGo + piece.substring(5);
             if(isKingInCheck(playerGo)){
                 board[startRow][startColumn] = piece;
                 board[targetRow][targetColumn] = targetPiece;
@@ -591,6 +595,10 @@ function isKingInCheck(color){
 
     return false;
 }
+
+document.getElementById('return-home').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
 
 // function isCheckmate(color) {
 //     let kingRow = -1;
