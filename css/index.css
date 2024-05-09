@@ -1,0 +1,87 @@
+body {
+    background: linear-gradient(120deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+p {
+    color: #ffffff;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+button {
+    font-size: 1.5em;
+    padding: 1em;
+    border-radius: 30px;
+    border: 0.2em solid #ffaf7b;
+    background: transparent;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #d76d77 0%, #ffaf7b 100%);
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.5s;
+}
+
+button:hover {
+    color: white;
+}
+
+button:hover:before {
+    transform: scale(1);
+}
+
+#logout {
+    font-size: 1.2em; /* Increased font size */
+    padding: 0.7em; /* Increased padding */
+    border-radius: 15px;
+    border: 0.1em solid #ff0000; /* Red border */
+    background: #ff0000; /* Red background */
+    cursor: pointer;
+    color: #fff; /* White text */
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+    width: 120px; /* Increased width */
+    height: 35px; /* Increased height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+}
+
+#logout:hover {
+    background: #ff4d4d; /* Lighter red on hover */
+    border-color: #ff4d4d; /* Lighter red border on hover */
+}

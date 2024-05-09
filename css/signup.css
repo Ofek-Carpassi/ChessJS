@@ -1,0 +1,49 @@
+body {
+    background: linear-gradient(120deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    /* Center the button */
+    margin: 0 auto;
+    display: block;
+    background: linear-gradient(120deg, #d76d77 0%, #ffaf7b 100%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+button:hover {
+    background: linear-gradient(120deg, #ffaf7b 0%, #d76d77 100%);
+}
